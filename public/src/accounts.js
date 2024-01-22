@@ -23,6 +23,28 @@ function getBooksPossessedByAccount(account, books, authors) {
   });
 }
 
+/*// Helper function 
+function isBookAvailableForBorrowing(book) {
+  const recentBorrow = book.borrows[0];
+  return !recentBorrow || recentBorrow.returned;
+}
+
+// getBooksPossessedByAccount function 
+function getBooksPossessedByAccount(account, books, authors) {
+  return books.filter(book => {
+    if (isBookAvailableForBorrowing(book)) {
+      return false;
+    }
+
+    const recentBorrow = book.borrows[0];
+    if (recentBorrow.id === account.id && !recentBorrow.returned) {
+      book.author = authors.find(author => author.id === book.authorId);
+      return true;
+    }
+    return false;
+  });
+}*/ 
+
 module.exports = {
   findAccountById,
   sortAccountsByLastName,
